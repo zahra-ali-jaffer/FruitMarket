@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit Market</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Fruit Market</h2>
+
+    <!-- Login Form -->
+    <div id="loginDiv">
+      <h3>Seller Login</h3>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+<p>
+      <button class="btn" onclick="login()">Login</button>
+      <p id="loginError" class="error"></p>
+    </div>
+
+    <!-- Main Market Area -->
+    <div id="marketDiv" class="hidden">
+      <h3>Available Fruits</h3>
+      <input type="text" id="searchInput" placeholder="Search for a fruit..." oninput="searchFruit()" />
+
+      <form id="orderForm">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Fruit</th>
+              <th>Price (£)</th>
+              <th>Quantity</th>
+              <th>Add to Basket</th>
+            </tr>
+          </thead>
+          <tbody id="fruitTable"></tbody>
+        </table>
+        <button type="submit" class="btn">Submit Order</button>
+      </form>
+
+      <!-- Order Summary -->
+      <div id="orderSummary" class="hidden">
+        <h3>Your Order</h3>
+        <ul id="orderList"></ul>
+        <p><strong>Total Price: £<span id="totalPrice">0.00</span></strong></p>
+
+        <!-- Delivery Details -->
+        <h4>Delivery Details</h4>
+        <input type="text" id="customerName" placeholder="Your Name" />
+        <input type="text" id="deliveryAddress" placeholder="Delivery Address" />
+        <select id="deliveryOption">
+          <option value="standard">Standard Delivery (Free)</option>
+          <option value="express">Express Delivery (£2.00)</option>
+        </select>
+        <button class="btn" onclick="confirmDelivery()">Confirm Order</button>
+      </div>
+    </div>
+
+    <!-- Confirmation Page -->
+    <div id="confirmationPage" class="hidden">
+      <h3>Order Confirmed!</h3>
+      <p id="confirmationText"></p>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
